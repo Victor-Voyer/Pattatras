@@ -19,8 +19,9 @@ Cliquez sur **« Générer 10 nouveaux nombres aléatoires »** pour lancer un n
 |-----------|---------------------|
 | Vous avez reçu un **lien internet** | [Méthode 1 — Version en ligne](#méthode-1--version-en-ligne-la-plus-simple) |
 | Vous avez reçu une **archive ZIP** | [Méthode 2 — Depuis le ZIP](#méthode-2--depuis-larchive-zip-sur-votre-ordinateur) |
+| Vous avez un **lien GitHub** | [Méthode 3 — Depuis GitHub](#méthode-3--depuis-github) |
 
-> **En résumé :** si un lien vous a été envoyé, ouvrez-le dans votre navigateur — c’est tout. Le ZIP sert surtout si vous voulez lancer le projet **sur votre machine**, sans passer par internet.
+> **En résumé :** si un lien vous a été envoyé, ouvrez-le dans votre navigateur — c’est tout. Le ZIP ou GitHub servent si vous voulez lancer le projet **sur votre machine**, sans passer par internet.
 
 ---
 
@@ -140,6 +141,98 @@ Le site ne sera plus accessible tant que vous n’aurez pas relancé `npx serve 
 
 ---
 
+## Méthode 3 — Depuis GitHub
+
+**GitHub** est un site web où les développeurs hébergent et partagent du code. Si on vous a envoyé un lien du type `https://github.com/Victor-Voyer/Pattatras`, c’est l’adresse du projet sur GitHub.
+
+Cette méthode permet de récupérer le projet sur votre ordinateur, puis de le lancer localement (comme avec le ZIP).
+
+> **Quelle option choisir ?**
+> - **Option A (recommandée)** : télécharger le ZIP depuis GitHub — la plus simple, aucun outil supplémentaire.
+> - **Option B** : cloner avec Git — pratique si vous connaissez déjà Git ou si vous devez mettre à jour le projet régulièrement.
+
+### Option A — Télécharger le projet en ZIP (recommandé)
+
+1. Ouvrez le lien GitHub dans votre navigateur, par exemple :
+   ```
+   https://github.com/Victor-Voyer/Pattatras
+   ```
+2. Sur la page du projet, cliquez sur le bouton vert **Code** (en haut à droite de la liste des fichiers).
+3. Dans le menu qui s’ouvre, choisissez **Download ZIP** (Télécharger le ZIP).
+4. Le fichier ZIP se télécharge (souvent dans le dossier **Téléchargements**).
+5. **Décompressez le ZIP** comme indiqué dans la [méthode 2, étape 1](#étape-1--décompresser-le-zip) :
+   - **Windows :** clic droit → **Extraire tout…**
+   - **Mac :** double-cliquez sur le ZIP
+
+   Vous obtenez un dossier du type `Pattatras-main` (le suffixe `-main` est normal : c’est le nom de la branche principale sur GitHub).
+
+6. Poursuivez ensuite à partir de la [méthode 2, étape 2](#étape-2--installer-nodejs-une-seule-fois) :
+   - installer Node.js (une seule fois),
+   - ouvrir un terminal dans le dossier du projet (`Pattatras-main` ou `Pattatras`),
+   - lancer `npx serve .`,
+   - ouvrir l’adresse **Local** dans le navigateur.
+
+### Option B — Cloner avec Git (pour utilisateurs un peu à l’aise)
+
+**Git** est un outil qui permet de copier un projet depuis GitHub en une commande, et de le mettre à jour plus tard.
+
+#### Installer Git (une seule fois)
+
+1. Allez sur [https://git-scm.com/downloads](https://git-scm.com/downloads).
+2. Téléchargez Git pour **Windows** ou **Mac**.
+3. Lancez l’installateur et acceptez les options par défaut.
+
+**Vérifier l’installation**
+
+Dans un terminal (cmd sur Windows, Terminal sur Mac), tapez :
+
+```text
+git --version
+```
+
+Un numéro de version doit s’afficher (ex. `git version 2.x.x`).
+
+#### Copier le projet depuis GitHub
+
+1. Ouvrez un terminal.
+2. Allez dans le dossier où vous voulez stocker le projet. Exemple sur Mac :
+
+   ```text
+   cd Desktop
+   ```
+
+   Sur Windows, vous pouvez par exemple taper `cd Desktop` ou naviguer vers `Documents`.
+
+3. Copiez le projet avec cette commande (remplacez l’URL si on vous en a donné une autre) :
+
+   ```text
+   git clone https://github.com/Victor-Voyer/Pattatras.git
+   ```
+
+4. Un dossier `Pattatras` est créé avec tous les fichiers du projet.
+
+5. Ouvrez un terminal **dans ce dossier** :
+   - **Windows :** Explorateur de fichiers → dossier `Pattatras` → barre d’adresse → tapez `cmd` → Entrée.
+   - **Mac :** dans Terminal, tapez `cd ` puis glissez-déposez le dossier `Pattatras`.
+
+6. Poursuivez comme pour la [méthode 2](#méthode-2--depuis-larchive-zip-sur-votre-ordinateur) :
+   - installez Node.js si ce n’est pas déjà fait ([étape 2](#étape-2--installer-nodejs-une-seule-fois)),
+   - lancez `npx serve .` ([étape 4](#étape-4--lancer-le-projet)),
+   - ouvrez l’adresse **Local** dans le navigateur ([étape 5](#étape-5--ouvrir-lapplication-dans-le-navigateur)).
+
+#### Mettre à jour le projet plus tard (option Git uniquement)
+
+Si le projet a été modifié sur GitHub et que vous voulez récupérer la dernière version :
+
+1. Ouvrez un terminal dans le dossier `Pattatras`.
+2. Tapez :
+
+   ```text
+   git pull
+   ```
+
+---
+
 ## Utilisation de l’application
 
 1. Au chargement, **10 nombres aléatoires** sont déjà affichés dans le tableau.
@@ -156,7 +249,7 @@ Les consignes détaillées du sujet sont aussi disponibles dans le fichier `CONS
 ### « La page reste blanche » ou « Erreur dans la console »
 
 - Vous avez probablement ouvert `index.html` en double-cliquant dessus.  
-  **Solution :** utilisez la [méthode 2](#méthode-2--depuis-larchive-zip-sur-votre-ordinateur) avec `npx serve .`, ou la [version en ligne](#méthode-1--version-en-ligne-la-plus-simple).
+  **Solution :** utilisez la [méthode 2](#méthode-2--depuis-larchive-zip-sur-votre-ordinateur) ou la [méthode 3](#méthode-3--depuis-github) avec `npx serve .`, ou la [version en ligne](#méthode-1--version-en-ligne-la-plus-simple).
 
 ### « `npx` n’est pas reconnu » ou « `node` n’est pas reconnu »
 
@@ -193,7 +286,7 @@ Les consignes détaillées du sujet sont aussi disponibles dans le fichier `CONS
 En cas de blocage, indiquez :
 
 - votre système (**Windows** ou **Mac**),
-- la méthode utilisée (**lien en ligne** ou **ZIP local**),
+- la méthode utilisée (**lien en ligne**, **ZIP local** ou **GitHub**),
 - le message d’erreur exact (copier-coller ou capture d’écran),
 - à quelle étape vous êtes bloqué.
 
