@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pattatras</title>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <header class="header">
+      <p class="header-badge">Test technique CPAM - Victor VOYER</p>
+      <h1>Pattatras</h1>
+    </header>
+    <main class="container">
+      <aside class="consignes" aria-label="Consignes">
+        <h2 class="consignes-title">Consignes</h2>
+        <p class="consignes-intro">Pour chaque nombre, afficher :</p>
+        <ul class="legend">
+          <li class="legend-item legend-item--number">
+            Nombres aléatoires de 1 à 6457
+          </li>
+          <li class="legend-item legend-item--patte">Multiple de 3 → Patte</li>
+          <li class="legend-item legend-item--tatras">
+            Multiple de 5 → Tatras
+          </li>
+          <li class="legend-item legend-item--pattatras">
+            Multiple de 3 et 5 → Pattatras
+          </li>
+          <li class="legend-item legend-item--number">Sinon → le nombre</li>
+        </ul>
+      </aside>
+
+      <section class="table-wrapper">
+        <button type="button" id="btn-generate">
+          Générer 10 nouveaux nombres aléatoires
+        </button>
+        <table class="results-table">
+          <thead>
+            <tr>
+              <th scope="col">Nombre tiré</th>
+              <th scope="col">Résultats</th>
+            </tr>
+          </thead>
+          <tbody id="results-body"></tbody>
+        </table>
+      </section>
+    </main>
+
+    <script type="module" src="js/app.js"></script>
+  </body>
+</html>

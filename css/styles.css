@@ -1,0 +1,76 @@
+body {
+  font-family: Arial, sans-serif;
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 0 15px;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+#btn-generate {
+  display: block;
+  padding: 8px 16px;
+  margin: 20px auto;
+  cursor: pointer;
+}
+
+.consignes {
+  margin-bottom: 15px;
+  font-size: 13px;
+  color: gray;
+}
+
+.consignes-title {
+  font-size: 14px;
+  font-weight: normal;
+  margin-bottom: 4px;
+}
+
+.consignes-intro {
+  margin-bottom: 4px;
+}
+
+.legend {
+  padding-left: 18px;
+}
+
+.results-table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
+.results-table th,
+.results-table td {
+  border: 1px solid #ccc;
+  padding: 8px;
+  width: 50%;
+}
+
+.results-table th {
+  background-color: #eee;
+}
+
+.number,
+.result {
+  text-align: center;
+}
+
+.badge {
+  font-weight: bold;
+}
+
+.result[data-type="patte"] .badge {
+  color: orange;
+}
+
+.result[data-type="tatras"] .badge {
+  color: green;
+}
+
+.result[data-type="pattatras"] .badge {
+  color: blue;
+}
