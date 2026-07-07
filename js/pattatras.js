@@ -5,22 +5,20 @@ export const MAX_NUMBER = 6457;
 // Nombre de résultats affichés par lot
 export const COUNT = 10;
 
+// Règles de classification -> amélioration cognitive 
+// Une seule lecture des différentes règles
+const rules = [
+  {test: (n) => n % 3 === 0 && n % 5 === 0, value: 'Pattatras', type: 'pattatras'},
+  {test: (n) => n % 3 === 0, value: 'Patte', type: 'patte'},
+  {test: (n) => n % 5 === 0, value: 'Tatras', type: 'tatras'},
+];
+
 export function classifyNumber(n) {
-  const isMultipleOf3 = n % 3 === 0;
-  const isMultipleOf5 = n % 5 === 0;
-
-  if (isMultipleOf3 && isMultipleOf5) {
-    return { value: 'Pattatras', type: 'pattatras' };
+  // On cherche la règle qui correspond au nombre
+  const rule = rules.find((rule) => rule.test(n));
+  if (rule) {
+    return { value: rule.value, type: rule.type };
   }
-
-  if (isMultipleOf3) {
-    return { value: 'Patte', type: 'patte' };
-  }
-
-  if (isMultipleOf5) {
-    return { value: 'Tatras', type: 'tatras' };
-  }
-
   return { value: String(n), type: 'number' };
 }
 
